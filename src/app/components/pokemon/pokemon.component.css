@@ -1,0 +1,91 @@
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:disabled{
+    opacity: 0.4;
+    cursor:not-allowed;
+}
+.container {
+    max-width: 1320px;
+    margin: auto;
+    background-color: #ececec;
+    padding: 30px;
+}
+.icon-search{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+input[type=text], input[type=url]{
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    height: 15px;
+}
+
+.inputSearch{
+    padding: 10px 25px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #bbb;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+  
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+.buttonsBox i{
+    color:#6658f2;
+    font-size: 20px;
+    padding: 10px;
+}
+button.btn{
+    background: #6658f2;
+    border: 1px solid #6658f2;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 3px;
+    padding: 7px 15px;
+}
+.mr-5{margin-right: 10px;}
+
+.boxSearchCreate{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0 ;
+}
+.inputs-form {
+    display: grid;
+    justify-items: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.boxForm{
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #bbb;
+    text-align: center;
+}

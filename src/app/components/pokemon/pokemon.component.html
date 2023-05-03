@@ -1,0 +1,62 @@
+<div class="container">
+    <h3>Listado de Pokemon</h3>
+    <div class="boxSearchCreate">
+      <div>
+        <i class="fa fa-search icon-search"></i>
+        <input class="inputSearch" placeholder="Buscar" type="search" name="search" id="search" [(ngModel)]="value" (search)="search()"> 
+      </div>
+      <!-- <button><i class="fa fa-plus"></i> Nuevo</button> -->
+    </div>
+
+    <section class="boxForm">
+      <h4>Nuevo Pokemon</h4>
+      <form [formGroup]="form" (ngSubmit)="create()">
+        <div class="inputs-form">
+          <div>
+            <label for="name">Nombre: </label>
+            <input id="name" type="text" name="name" formControlName="name">
+          </div>
+          <div>
+            <label for="attack">Ataque: </label>
+            <span>0</span>
+            <input type="range" id="attack" name="attack" min="0" max="100" formControlName="attack">
+            <span>100</span>
+          </div>
+          <div>
+            <label for="image">Imagen: </label>
+            <input id="image" type="url" name="image" formControlName="image">
+          </div>
+          <div>
+            <label for="ataque">Defensa: </label>
+            <span>0</span>
+            <input type="range" id="defense" name="defense" min="0" max="100" formControlName="defense">
+            <span>100</span>
+          </div>
+        </div>
+        <button class="mr-5 btn" type="submit" [disabled]="form.invalid"><i class="fa fa-save" disabled></i> Guardar</button>
+        <button class="btn"><i class="fa fa-cancel"></i> Cancelar</button>
+      </form>
+    </section>
+
+    <section>
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Imagen</th>
+          <th>Ataque</th>
+          <th>Defensa</th>
+          <th>Acciones</th>
+        </tr>
+        <tr *ngFor="let pokemon of pokemons">
+          <td>{{pokemon.name}}</td>
+          <td><img width="20%" src="{{ pokemon.image }}"/></td>
+          <td>{{pokemon.attack}}</td>
+          <td>{{pokemon.defense}}</td>
+          <td class="buttonsBox">
+            <button (click)="update(pokemon)"><i class="fa fa-edit"></i></button>
+            <button (click)="delete(pokemon.id)"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
